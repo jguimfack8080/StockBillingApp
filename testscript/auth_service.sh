@@ -4,9 +4,13 @@
 API_BASE_URL="http://localhost:8001"
 ADMIN_EMAIL="admin@test.com"
 ADMIN_PASSWORD="adminpassword"
+USER_FIRST_NAME="Jean"
+USER_LAST_NAME="Dupont"
+USER_BIRTH_DATE="1995-05-20"
+USER_ID_CARD_NUMBER="1234567890"
 USER_EMAIL="user1@test.com"
 USER_PASSWORD="userpass"
-USER_ROLE="caissier"
+USER_ROLE="manager"
 
 # Fonction pour afficher les résultats en couleur
 function print_success() {
@@ -44,15 +48,20 @@ echo "3️⃣ Création d'un utilisateur (${USER_EMAIL})..."
 CREATE_USER_RESPONSE=$(curl -s -X POST "${API_BASE_URL}/users/" \
     -H "Authorization: Bearer ${ADMIN_TOKEN}" \
     -H "Content-Type: application/json" \
-    -d "{\"email\":\"${USER_EMAIL}\",\"password\":\"${USER_PASSWORD}\",\"role\":\"${USER_ROLE}\"}")
+    -d "{
+        \"first_name\": \"${USER_FIRST_NAME}\",
+        \"last_name\": \"${USER_LAST_NAME}\",
+        \"birth_date\": \"${USER_BIRTH_DATE}\",
+        \"id_card_number\": \"${USER_ID_CARD_NUMBER}\",
+        \"email\": \"${USER_EMAIL}\",
+        \"password\": \"${USER_PASSWORD}\",
+        \"role\": \"${USER_ROLE}\"
+    }")
 
+# Vérification de la création de l'utilisateur
 if echo "$CREATE_USER_RESPONSE" | grep -q "email"; then
     print_success "Utilisateur ${USER_EMAIL} créé avec succès."
 else
     print_error "Échec de la création de l'utilisateur : $CREATE_USER_RESPONSE"
     exit 1
 fi
-
-# Vérifier que l'utilisateur existe en base
-echo "4️⃣ Vérification de l'utilisateur en base..."
-USER_EXISTS=$(curl -s -X GET "${API_BASE_URL}/users/" -H "Authorization: Bearer ${ADMIN_TOKEN}" | jq ".[] | select(.email == \"${USER_EMAIL}\")")

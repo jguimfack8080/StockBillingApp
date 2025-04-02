@@ -1,5 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+from datetime import date
+
 from ..database import get_db
 from ..models import User
 from ..schemas import UserCreate, UserOut
@@ -8,15 +10,7 @@ from ..dependencies import get_current_user
 
 router = APIRouter()
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from ..database import get_db
-from ..models import User
-from ..schemas import UserCreate, UserOut
-from ..utils.security import get_password_hash
-from ..dependencies import get_current_user
-
-router = APIRouter()
+ALLOWED_ROLES = ["admin", "manager", "cashier"]
 
 @router.post("/", response_model=UserOut)
 def create_user(
@@ -24,30 +18,77 @@ def create_user(
     db: Session = Depends(get_db),
     current_user: dict = Depends(get_current_user)
 ):
-    print(f"Attempt to create: {user.email} by {current_user}")
-
+    # Vérification des privilèges d'accès : seul un admin peut créer un compte
     if current_user.get("role") != "admin":
-        print("Access denied: User is not admin")
-        raise HTTPException(status_code=403, detail="Access denied")
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied: Admin privileges required"
+        )
     
-    db_user = db.query(User).filter(User.email == user.email).first()
-    if db_user:
-        print(f"Email already in use: {user.email}")
-        raise HTTPException(status_code=400, detail="Email already in use")
+    # Vérification que le rôle fourni est autorisé
+    if user.role not in ALLOWED_ROLES:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Invalid role. Allowed roles: {', '.join(ALLOWED_ROLES)}"
+        )
     
+    # Vérification que les champs obligatoires ne sont pas vides
+    if not user.first_name or not user.last_name:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="First name and last name are required"
+        )
+    
+    # Vérification de la date de naissance (ne peut être dans le futur)
+    if user.birth_date > date.today():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Birth date cannot be in the future"
+        )
+    
+    # Vérification de la présence du numéro de carte d'identité
+    if not user.id_card_number:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="ID card number is required"
+        )
+    
+    # Vérification de l'unicité de l'email
+    existing_user = db.query(User).filter(User.email == user.email).first()
+    if existing_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email already in use"
+        )
+    
+    # Vérification de l'unicité du numéro de carte d'identité
+    existing_id_card = db.query(User).filter(User.id_card_number == user.id_card_number).first()
+    if existing_id_card:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="ID card number already in use"
+        )
+    
+    # Tentative de création de l'utilisateur
     try:
         hashed_password = get_password_hash(user.password)
+        role_value = user.role.value if hasattr(user.role, "value") else user.role
         db_user = User(
+            first_name=user.first_name,
+            last_name=user.last_name,
+            birth_date=user.birth_date,
+            id_card_number=user.id_card_number,
             email=user.email,
             hashed_password=hashed_password,
-            role=user.role if hasattr(user, "role") else "cashier"
+            role=role_value,
         )
         db.add(db_user)
         db.commit()
         db.refresh(db_user)
-        print(f"User successfully created: {db_user.email}")
-        
-        return UserOut(email=db_user.email, role=db_user.role)  # ✅ Only return necessary data
+        return UserOut.from_orm(db_user)
     except Exception as e:
-        print(f"Error during creation: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
+        # En développement, renvoyer l'exception complète pour faciliter le débogage
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Internal server error: {str(e)}"
+        )

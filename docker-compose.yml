@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   mysql:
@@ -12,6 +12,11 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - stock_network
 
@@ -22,10 +27,10 @@ services:
     environment:
       DATABASE_URL: "mysql+pymysql://root:1708@mysql/auth_db"
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     networks:
       - stock_network
-
 
 volumes:
   mysql_data:
