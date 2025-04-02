@@ -22,3 +22,16 @@ def decode_token(token: str):
         return jwt.decode(token, settings.secret_key, algorithms=[settings.algorithm])
     except jwt.JWTError:
         return None
+
+from fastapi import HTTPException, status
+
+def check_admin_privileges(current_user: dict):
+    """
+    Vérifie si l'utilisateur a des privilèges d'administrateur.
+    Lève une exception HTTP 403 si l'utilisateur n'est pas un administrateur.
+    """
+    if current_user.get("role") != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied: Admin privileges required"
+        )

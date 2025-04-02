@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import auth, users
+from app.routers import auth, users, update_user  # Import update_user router here
 from app.database import engine, SessionLocal
 from app.models import User
 from app.utils.security import get_password_hash
@@ -23,8 +23,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include the routers
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(update_user.router, prefix="/users", tags=["users"])  # Add the update_user router here
 
 @app.on_event("startup")
 def create_first_admin():

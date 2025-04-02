@@ -1,16 +1,29 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from datetime import date
-
 from ..database import get_db
 from ..models import User
 from ..schemas import UserCreate, UserOut
-from ..utils.security import get_password_hash
+from ..utils.security import get_password_hash, check_admin_privileges
 from ..dependencies import get_current_user
 
 router = APIRouter()
 
 ALLOWED_ROLES = ["admin", "manager", "cashier"]
+
+# Endpoint pour récupérer tous les utilisateurs, réservé aux administrateurs
+@router.get("/", response_model=list[UserOut], tags=["users"])
+def get_users(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    # Vérification des privilèges d'accès : seul un admin peut voir la liste des utilisateurs
+    check_admin_privileges(current_user)
+    
+    # Récupérer la liste des utilisateurs
+    users = db.query(User).all()
+    return users
+
 
 @router.post("/", response_model=UserOut)
 def create_user(
@@ -19,11 +32,7 @@ def create_user(
     current_user: dict = Depends(get_current_user)
 ):
     # Vérification des privilèges d'accès : seul un admin peut créer un compte
-    if current_user.get("role") != "admin":
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Access denied: Admin privileges required"
-        )
+    check_admin_privileges(current_user)
     
     # Vérification que le rôle fourni est autorisé
     if user.role not in ALLOWED_ROLES:
