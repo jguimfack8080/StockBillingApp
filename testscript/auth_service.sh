@@ -13,6 +13,7 @@ USER_PASSWORD="userpass"
 USER_ROLE="cashier"
 NEW_USER_EMAIL="user1_updated@test.com"
 NEW_USER_ROLE="cashier"  # New role for updating
+DEACTIVATION_REASON="Inactive for too long"
 
 # Fonction pour afficher les résultats en couleur
 function print_success() {
@@ -101,12 +102,24 @@ GET_USERS_RESPONSE=$(curl -s -X GET "${API_BASE_URL}/users/" \
     -H "Accept: application/json")
 
 # Afficher la réponse du serveur lors de la récupération des utilisateurs
-echo "Réponse de la récupération des utilisateurs : $GET_USERS_RESPONSE"
+echo "$GET_USERS_RESPONSE"
 
-# Vérification de la récupération des utilisateurs
-if echo "$GET_USERS_RESPONSE" | jq -e '. | length > 0' > /dev/null; then
-    print_success "Liste des utilisateurs récupérée avec succès."
+# Désactivation de l'utilisateur
+echo "6️⃣ Désactivation de l'utilisateur (${USER_ID}) avec raison : '${DEACTIVATION_REASON}'..."
+DEACTIVATE_USER_RESPONSE=$(curl -s -X PUT "${API_BASE_URL}/users/deactivate/${USER_ID}" \
+    -H "Authorization: Bearer ${ADMIN_TOKEN}" \
+    -H "Content-Type: application/json" \
+    -d "{
+        \"reason\": \"${DEACTIVATION_REASON}\"
+    }")
+
+# Afficher la réponse du serveur lors de la désactivation
+echo "Réponse de la désactivation de l'utilisateur : $DEACTIVATE_USER_RESPONSE"
+
+# Vérification de la désactivation de l'utilisateur
+if echo "$DEACTIVATE_USER_RESPONSE" | grep -q "message"; then
+    print_success "Utilisateur ${USER_ID} désactivé avec succès pour la raison '${DEACTIVATION_REASON}'."
 else
-    print_error "Échec de la récupération des utilisateurs : $GET_USERS_RESPONSE"
+    print_error "Échec de la désactivation de l'utilisateur : $DEACTIVATE_USER_RESPONSE"
     exit 1
 fi

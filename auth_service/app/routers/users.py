@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from datetime import date
+from datetime import datetime
 from ..database import get_db
 from ..models import User
-from ..schemas import UserCreate, UserOut
+from ..schemas import UserCreate, UserOut, DeactivationReason
 from ..utils.security import get_password_hash, check_admin_privileges
 from ..dependencies import get_current_user
 
@@ -25,6 +25,7 @@ def get_users(
     return users
 
 
+# Endpoint pour créer un utilisateur (réservé aux administrateurs)
 @router.post("/", response_model=UserOut)
 def create_user(
     user: UserCreate,
@@ -49,7 +50,7 @@ def create_user(
         )
     
     # Vérification de la date de naissance (ne peut être dans le futur)
-    if user.birth_date > date.today():
+    if user.birth_date > datetime.today().date():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Birth date cannot be in the future"
@@ -101,3 +102,33 @@ def create_user(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Internal server error: {str(e)}"
         )
+
+
+
+@router.put("/deactivate/{user_id}", tags=["users"])
+def deactivate_user(
+    user_id: int,
+    reason: DeactivationReason,  # La raison est passée dans le corps de la requête
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    # Vérification des privilèges d'accès : seul un admin peut désactiver un utilisateur
+    check_admin_privileges(current_user)
+    
+    # Recherche de l'utilisateur
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    # Désactivation de l'utilisateur et ajout de la raison
+    user.is_active = False
+    user.deactivation_date = datetime.utcnow()  # Enregistrer la date de désactivation
+    user.deactivation_reason = reason.reason  # Ajouter la raison de la désactivation
+    
+    db.commit()
+    db.refresh(user)
+    
+    return {"message": f"User {user_id} has been deactivated for the following reason: {reason.reason}"}

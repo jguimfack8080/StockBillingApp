@@ -15,3 +15,5 @@ class User(Base):
     role = Column(String(50), nullable=False)  # admin / manager / caissier
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+    deactivation_date = Column(DateTime, nullable=True)  # Date de désactivation
+    deactivation_reason = Column(String(255), nullable=True)  # Raison de la désactivation

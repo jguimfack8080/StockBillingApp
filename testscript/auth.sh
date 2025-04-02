@@ -50,3 +50,11 @@ L'admin peut récupérer tous les utilisateurs en envoyant une requête GET. Cel
 curl -X GET "http://localhost:8001/users/" \
     -H "Authorization: Bearer your_admin_token_here" \
     -H "Accept: application/json"
+
+##Desactiver un unitilisateur en donnant les raisons:
+
+curl -X PUT "http://localhost:8000/users/deactivate/{user_id}" \
+    -H "Authorization: Bearer ${ADMIN_TOKEN}" \
+    -H "Content-Type: application/json" \
+    -d '{"reason": "Inappropriate behavior"}'
+
