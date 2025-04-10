@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import auth, users
+from app.routers import auth, users, update_user  # Import update_user router here
 from app.database import engine, SessionLocal
 from app.models import User
 from app.utils.security import get_password_hash
 from app.utils.config import settings
+from datetime import datetime
 
 # Créer les tables dans la base de données
 from app.database import Base
@@ -22,30 +23,42 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include the routers
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(update_user.router, prefix="/users", tags=["users"])  # Add the update_user router here
 
 @app.on_event("startup")
 def create_first_admin():
-    # Connexion à la base de données
+    """Crée un compte administrateur au démarrage s'il n'existe pas encore."""
     db = SessionLocal()
 
-    # Vérifie si un utilisateur admin existe déjà
-    existing_admin = db.query(User).filter(User.role == "admin").first()
-    if not existing_admin:
-        # Si aucun utilisateur admin n'existe, on le crée
-        hashed_password = get_password_hash("adminpassword")  # Choisis un mot de passe sécurisé
-        new_admin = User(
-            email="admin@test.com",
-            hashed_password=hashed_password,
-            role="admin"
-        )
-        
-        db.add(new_admin)
-        db.commit()
-        db.refresh(new_admin)
-        print(f"Utilisateur admin créé : {new_admin.email}")
+    try:
+        existing_admin = db.query(User).filter(User.role == "admin").first()
+        if not existing_admin:
+            hashed_password = get_password_hash("adminpassword")  # Remplace par un mot de passe sécurisé
+            new_admin = User(
+                first_name="Admin",
+                last_name="User",
+                birth_date="1990-01-01",  # Date fictive, à remplacer si nécessaire
+                id_card_number=None,  # Optionnel
+                email="admin@test.com",
+                hashed_password=hashed_password,
+                role="admin",
+                created_at=datetime.utcnow()
+            )
+
+            db.add(new_admin)
+            db.commit()
+            db.refresh(new_admin)
+            print(f"✅ Administrateur créé avec succès : {new_admin.email}")
+
+    except Exception as e:
+        print(f"❌ Erreur lors de la création de l'admin : {e}")
+    finally:
+        db.close()
 
 @app.get("/")
 def health_check():
+    """Endpoint pour vérifier si l'API fonctionne bien."""
     return {"status": "OK", "security": "ACTIVE"}
