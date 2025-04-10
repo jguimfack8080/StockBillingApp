@@ -103,8 +103,6 @@ def create_user(
             detail=f"Internal server error: {str(e)}"
         )
 
-
-
 @router.put("/deactivate/{user_id}", tags=["users"])
 def deactivate_user(
     user_id: int,
@@ -123,12 +121,20 @@ def deactivate_user(
             detail="User not found"
         )
     
-    # Désactivation de l'utilisateur et ajout de la raison
-    user.is_active = False
-    user.deactivation_date = datetime.utcnow()  # Enregistrer la date de désactivation
-    user.deactivation_reason = reason.reason  # Ajouter la raison de la désactivation
-    
+    if user.is_active:
+        # Désactivation de l'utilisateur et ajout de la raison
+        user.is_active = False
+        user.deactivation_date = datetime.utcnow()  # Enregistrer la date de désactivation
+        user.deactivation_reason = reason.reason  # Ajouter la raison de la désactivation
+        message = f"User {user_id} has been deactivated for the following reason: {reason.reason}"
+    else:
+        # Réactivation de l'utilisateur
+        user.is_active = True
+        user.deactivation_date = None
+        user.deactivation_reason = None
+        message = f"User {user_id} has been reactivated"
+
     db.commit()
     db.refresh(user)
-    
-    return {"message": f"User {user_id} has been deactivated for the following reason: {reason.reason}"}
+
+    return {"message": message}

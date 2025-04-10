@@ -2,6 +2,8 @@ from datetime import datetime, timedelta
 from jose import jwt
 from passlib.context import CryptContext
 from .config import settings
+from fastapi import HTTPException, status
+
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -23,7 +25,6 @@ def decode_token(token: str):
     except jwt.JWTError:
         return None
 
-from fastapi import HTTPException, status
 
 def check_admin_privileges(current_user: dict):
     """

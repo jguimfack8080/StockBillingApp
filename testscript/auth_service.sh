@@ -46,31 +46,7 @@ else
     print_success "Token d'admin récupéré."
 fi
 
-# Créer un utilisateur (caissier)
-echo "3️⃣ Création d'un utilisateur (${USER_EMAIL})..."
-CREATE_USER_RESPONSE=$(curl -s -X POST "${API_BASE_URL}/users/" \
-    -H "Authorization: Bearer ${ADMIN_TOKEN}" \
-    -H "Content-Type: application/json" \
-    -d "{
-        \"first_name\": \"${USER_FIRST_NAME}\",
-        \"last_name\": \"${USER_LAST_NAME}\",
-        \"birth_date\": \"${USER_BIRTH_DATE}\",
-        \"id_card_number\": \"${USER_ID_CARD_NUMBER}\",
-        \"email\": \"${USER_EMAIL}\",
-        \"password\": \"${USER_PASSWORD}\",
-        \"role\": \"${USER_ROLE}\"
-    }")
 
-# Afficher la réponse du serveur lors de la création de l'utilisateur
-echo "Réponse de la création de l'utilisateur : $CREATE_USER_RESPONSE"
-
-# Vérification de la création de l'utilisateur
-if echo "$CREATE_USER_RESPONSE" | grep -q "email"; then
-    print_success "Utilisateur ${USER_EMAIL} créé avec succès."
-else
-    print_error "Échec de la création de l'utilisateur : $CREATE_USER_RESPONSE"
-    exit 1
-fi
 
 # Mettre à jour l'utilisateur
 USER_ID=$(echo "$CREATE_USER_RESPONSE" | jq -r '.id')  # Récupérer l'ID de l'utilisateur créé
