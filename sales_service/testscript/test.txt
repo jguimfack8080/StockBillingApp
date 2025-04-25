@@ -1,0 +1,67 @@
+##creer une vente
+curl -X POST http://localhost:8002/sales/ \
+-H "Content-Type: application/json" \
+-d '{
+  "cashier_id": 1,
+  "customer_id": 1,
+   "notes": "Commande test", 
+  "items": [
+    {"product_id": 101, "quantity": 5, "unit_price": 5.0},
+    {"product_id": 102, "quantity": 1, "unit_price": 10.0}
+  ]
+}'
+
+
+
+#Payer
+curl -X POST http://localhost:8002/sales/100/pay \
+-H "Content-Type: application/json" \
+-d '{
+  "transactions": [
+    {
+      "amount": 35.0,
+      "payment_method": "CASH",
+      "amount_received": 35.0
+    }
+  ]
+}'
+
+
+
+##Annuler une vente
+curl -X PUT http://localhost:8002/sales/1 \
+-H "Content-Type: application/json" \
+-d '{"status": "CANCELLED", "notes": "Client annule"}'
+
+✅ 3. Récupérer toutes les ventes (GET /sales/)
+
+curl http://localhost:8002/sales/
+✅ 4. Récupérer une vente spécifique par ID (GET /sales/{sale_id})
+
+curl http://localhost:8002/sales/1
+
+✅ 5. Récupérer une vente par numéro (GET /sales/number/{sale_number})
+
+curl http://localhost:8002/sales/number/V20250420-00001
+
+##Payement Mixte:
+
+curl -X POST http://localhost:8002/sales/1/pay \
+-H "Content-Type: application/json" \
+-d '{
+  "transactions": [
+    {
+      "payment_method": "CASH",
+      "amount": 20.0,
+      "amount_received": 20.0
+    },
+    {
+      "payment_method": "TRANSFER", 
+      "amount": 15.0,
+      "payment_details": {
+        "operator": "Orange",
+        "phone_number": "+237612345678"
+      }
+    }
+  ]
+}'

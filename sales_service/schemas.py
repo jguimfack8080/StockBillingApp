@@ -14,6 +14,12 @@ class TransactionStatus(str, Enum):
     FAILED = "FAILED"
     REFUNDED = "REFUNDED"
 
+class SaleStatus(str, Enum):
+    DRAFT = "DRAFT"  # Vente créée mais non payée
+    PENDING = "PENDING"  # En attente de paiement
+    COMPLETED = "COMPLETED"  # Paiement effectué
+    CANCELLED = "CANCELLED"  # Vente annulée
+
 class CustomerBase(BaseModel):
     first_name: str
     last_name: str
@@ -55,7 +61,7 @@ class SaleItem(SaleItemBase):
 class TransactionBase(BaseModel):
     amount: float
     payment_method: PaymentMethod
-    payment_details: Optional[str] = None
+    payment_details: Optional[Dict[str, Any]] = None
     amount_received: Optional[float] = None
     change_amount: Optional[float] = None
 
@@ -80,26 +86,30 @@ class Transaction(TransactionBase):
 class SaleBase(BaseModel):
     cashier_id: int
     customer_id: Optional[int] = None
-    payment_method: PaymentMethod
     notes: Optional[str] = None
 
 class SaleCreate(SaleBase):
     items: List[SaleItemCreate]
-    transactions: List[TransactionCreate]
 
     def calculate_total(self) -> float:
         return sum(item.calculate_total() for item in self.items)
 
+class SalePayment(BaseModel):
+    transactions: List[TransactionCreate]
+
+    def validate_payment(self, total_amount: float) -> bool:
+        total_paid = sum(t.amount for t in self.transactions)
+        return abs(total_paid - total_amount) < 0.01  # Tolérance pour les arrondis
+
 class SaleUpdate(BaseModel):
-    status: Optional[TransactionStatus] = None
-    payment_method: Optional[PaymentMethod] = None
+    status: Optional[SaleStatus] = None
     notes: Optional[str] = None
 
 class Sale(SaleBase):
     id: int
     sale_number: str
     total_amount: float
-    status: TransactionStatus
+    status: SaleStatus
     created_at: datetime
     updated_at: datetime
     items: List[SaleItem] = []
@@ -114,14 +124,10 @@ class SaleResponse(BaseModel):
     items_count: int
     total_amount: float
     payment_status: str
-
-class BulkSaleItem(SaleItemCreate):
-    pass
+    remaining_amount: float
 
 class BulkSaleCreate(BaseModel):
-    payment_method: PaymentMethod
-    items: List[BulkSaleItem]
-    transactions: List[TransactionCreate]
+    items: List[SaleItemCreate]
 
 class BulkSalesCreate(BaseModel):
     cashier_id: int

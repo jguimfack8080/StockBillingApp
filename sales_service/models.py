@@ -15,6 +15,12 @@ class TransactionStatus(str, enum.Enum):
     FAILED = "FAILED"
     REFUNDED = "REFUNDED"
 
+class SaleStatus(str, enum.Enum):
+    DRAFT = "DRAFT"
+    PENDING = "PENDING"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
+
 class Customer(Base):
     __tablename__ = "customers"
 
@@ -37,8 +43,7 @@ class Sale(Base):
     cashier_id = Column(Integer, nullable=False)
     customer_id = Column(Integer, ForeignKey("customers.id", ondelete="SET NULL"))
     total_amount = Column(Float, nullable=False)
-    payment_method = Column(Enum(PaymentMethod), nullable=False)
-    status = Column(Enum(TransactionStatus), nullable=False, default=TransactionStatus.PENDING)
+    status = Column(Enum(SaleStatus), nullable=False, default=SaleStatus.DRAFT)
     notes = Column(Text)
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
@@ -51,6 +56,13 @@ class Sale(Base):
         from datetime import datetime
         date_str = datetime.now().strftime("%Y%m%d")
         return f"V{date_str}-{self.id:05d}"
+
+    def calculate_remaining_amount(self):
+        total_paid = sum(t.amount for t in self.transactions if t.status == TransactionStatus.COMPLETED)
+        return self.total_amount - total_paid
+
+    def is_paid(self):
+        return abs(self.calculate_remaining_amount()) < 0.01  # Tolérance pour les arrondis
 
 class SaleItem(Base):
     __tablename__ = "sale_items"
