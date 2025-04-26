@@ -22,5 +22,13 @@ async def login(
             headers={"WWW-Authenticate": "Bearer"},
         )
     
+    # Vérifier si le compte est actif
+    if not user.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Ce compte a été désactivé",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
     access_token = create_access_token(data={"sub": user.email, "role": user.role})
     return {"access_token": access_token, "token_type": "bearer"}
