@@ -1,0 +1,1 @@
+# Ce fichier est intentionnellement vide pour faire du dossier middleware un package Python 

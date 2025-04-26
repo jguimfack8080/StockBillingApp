@@ -61,6 +61,7 @@ services:
       - "8002:8002"
     environment:
       DATABASE_URL: "mysql+pymysql://root:1708@mysql_sales/sales_db"
+      AUTH_SERVICE_URL: "http://auth_service:8000"
     depends_on:
       mysql_sales:
         condition: service_healthy
