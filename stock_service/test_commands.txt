@@ -1,0 +1,167 @@
+# Commandes de test pour le service de stock
+# ========================================
+
+# 1. Obtenir un token d'authentification
+# -------------------------------------
+curl -X POST "http://localhost:8001/auth/token" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "username=admin@test.com&password=adminpassword"
+
+# Remplacez YOUR_TOKEN par le token obtenu ci-dessus pour toutes les commandes suivantes
+
+# 2. Routes des Catégories
+# -----------------------
+# Créer une catégorie
+curl -X POST "http://localhost:8003/categories/" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+ \
+-d '{"name": "Electronique", "description": "Produits électroniques"}'
+
+# Lister toutes les catégories
+curl -X GET "http://localhost:8003/categories/" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Obtenir une catégorie spécifique
+curl -X GET "http://localhost:8003/categories/1" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Mettre à jour une catégorie
+curl -X PUT "http://localhost:8003/categories/1" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+ \
+-d '{"name": "Electronique Modifié", "description": "Nouvelle description"}'
+
+# Supprimer une catégorie
+curl -X DELETE "http://localhost:8003/categories/1" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# 3. Routes des Produits
+# ---------------------
+# Créer un produit avec numéro d'article
+curl -X POST "http://localhost:8003/products/" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+-d '{
+  "article_number": "ART-001",
+  "name": "Ordinateur Portable",
+  "description": "PC portable haute performance",
+  "price": 999.99,
+  "quantity": 10,
+  "category_ids": [1]
+}'
+
+# Créer un produit sans numéro d'article (ex: fruits)
+curl -X POST "http://localhost:8003/products/" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+-d '{
+  "name": "Bananes",
+  "description": "Bananes mûres",
+  "price": 2.99,
+  "quantity": 100,
+  "category_ids": [2]
+}'
+
+# Lister tous les produits
+curl -X GET "http://localhost:8003/products/" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+# Obtenir un produit par son ID
+curl -X GET "http://localhost:8003/products/1" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Obtenir un produit par son numéro d'article
+curl -X GET "http://localhost:8003/products/article/ART-001" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Mettre à jour un produit avec numéro d'article
+curl -X PUT "http://localhost:8003/products/1" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+ \
+-d '{
+  "article_number": "ART-001",
+  "name": "Ordinateur Portable Pro",
+  "description": "PC portable professionnel",
+  "price": 1299.99,
+  "quantity": 15,
+  "category_ids": [1]
+}'
+
+# Mettre à jour un produit sans numéro d'article
+curl -X PUT "http://localhost:8003/products/2" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+ \
+-d '{
+  "name": "Bananes Bio",
+  "description": "Bananes biologiques",
+  "price": 3.99,
+  "quantity": 80,
+  "category_ids": [2]
+}'
+
+# Supprimer un produit
+curl -X DELETE "http://localhost:8003/products/1" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# 4. Routes des Mouvements de Stock
+# -------------------------------
+# Créer un mouvement de stock (entrée) avec numéro d'article
+curl -X POST "http://localhost:8003/stock-movements/" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+ \
+-d '{
+  "product_id": 1,
+  "quantity": 5,
+  "movement_type": "IN",
+  "reason": "Réapprovisionnement"
+}'
+
+# Créer un mouvement de stock (sortie) sans numéro d'article
+curl -X POST "http://localhost:8003/stock-movements/" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+ \
+-d '{
+  "product_id": 2,
+  "quantity": 20,
+  "movement_type": "OUT",
+  "reason": "Vente"
+}'
+
+# Lister tous les mouvements de stock
+curl -X GET "http://localhost:8003/stock-movements/" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Obtenir les mouvements d'un produit spécifique par ID
+curl -X GET "http://localhost:8003/stock-movements/product/1" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Obtenir les mouvements d'un produit spécifique par numéro d'article
+curl -X GET "http://localhost:8003/stock-movements/product/article/ART-001" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTY4MzYwMX0.3D7d5GxXOVYwZV_MXf9KtjEbLfyKmzY7Qkpb35_9-54" \
+
+
+# Ordre recommandé pour tester :
+# 1. Obtenir un token
+# 2. Créer une catégorie
+# 3. Créer des produits (avec et sans numéro d'article)
+# 4. Effectuer des mouvements de stock
+# 5. Tester les opérations de lecture (GET)
+# 6. Tester les mises à jour (PUT)
+# 7. Tester les suppressions (DELETE)
+
+# Note : Si vous obtenez une erreur 401 (Unauthorized), 
+# cela signifie que le token a expiré et vous devez en obtenir un nouveau. 

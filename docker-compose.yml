@@ -41,6 +41,26 @@ services:
     networks:
       - stock_network
 
+  mysql_stock:
+    image: mysql:8.0
+    container_name: stockbilling_mysql_stock
+    environment:
+      MYSQL_ROOT_PASSWORD: 1708
+      MYSQL_DATABASE: stock_db
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_stock_data:/var/lib/mysql
+      - ./stock_service/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - stock_network
+
   auth_service:
     build: ./auth_service
     container_name: stockbilling_auth_service
@@ -68,9 +88,24 @@ services:
     networks:
       - stock_network
 
+  stock_service:
+    build: ./stock_service
+    container_name: stockbilling_stock_service
+    ports:
+      - "8003:8003"
+    environment:
+      DATABASE_URL: "mysql+pymysql://root:1708@mysql_stock/stock_db"
+      AUTH_SERVICE_URL: "http://auth_service:8000"
+    depends_on:
+      mysql_stock:
+        condition: service_healthy
+    networks:
+      - stock_network
+
 volumes:
   mysql_auth_data:
   mysql_sales_data:
+  mysql_stock_data:
 
 networks:
   stock_network:
