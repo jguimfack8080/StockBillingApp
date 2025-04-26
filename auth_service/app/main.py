@@ -7,10 +7,6 @@ from app.utils.security import get_password_hash
 from app.utils.config import settings
 from datetime import datetime
 
-# Créer les tables dans la base de données
-from app.database import Base
-Base.metadata.create_all(bind=engine)
-
 # Création de l'application FastAPI
 app = FastAPI()
 
