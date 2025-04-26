@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 import models, schemas
 from database import engine, get_db
 from routers import sales, transactions, customers
+from middleware.auth import get_current_user
 
 # Load environment variables
 load_dotenv()

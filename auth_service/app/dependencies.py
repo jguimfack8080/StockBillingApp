@@ -6,17 +6,26 @@ from .utils.config import settings
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 
+credentials_exception = HTTPException(
+    status_code=status.HTTP_401_UNAUTHORIZED,
+    detail="Could not validate credentials",
+    headers={"WWW-Authenticate": "Bearer"},
+)
+
 async def get_current_user(token: str = Depends(oauth2_scheme)):
-    payload = decode_token(token)
-    if not payload:
-        raise credentials_exception
+    try:
+        payload = decode_token(token)
+        if not payload:
+            raise credentials_exception
 
-    user_data = {
-        "email": payload.get("sub"),
-        "role": payload.get("role")  
-    }
-    
-    if not user_data["email"] or not user_data["role"]:
-        raise credentials_exception
+        user_data = {
+            "email": payload.get("sub"),
+            "role": payload.get("role")  
+        }
+        
+        if not user_data["email"] or not user_data["role"]:
+            raise credentials_exception
 
-    return user_data
+        return user_data
+    except JWTError:
+        raise credentials_exception

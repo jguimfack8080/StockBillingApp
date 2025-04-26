@@ -88,6 +88,7 @@ class Transaction(Base):
     payment_method = Column(Enum(PaymentMethod), nullable=False)
     status = Column(Enum(TransactionStatus), nullable=False, default=TransactionStatus.PENDING)
     payment_details = Column(JSON)
+    mixed_payments = Column(JSON)  # Stocke les détails de tous les moyens de paiement utilisés
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
 

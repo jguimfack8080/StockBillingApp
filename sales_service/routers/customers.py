@@ -3,12 +3,20 @@ from sqlalchemy.orm import Session
 from typing import List
 import models, schemas
 from database import get_db
+from middleware.auth import get_current_user
+from utils import check_access, CUSTOMERS_ACCESS
 from datetime import datetime
 
 router = APIRouter()
 
 @router.post("/", response_model=schemas.Customer)
-def create_customer(customer: schemas.CustomerCreate, db: Session = Depends(get_db)):
+def create_customer(
+    customer: schemas.CustomerCreate, 
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    check_access(current_user, CUSTOMERS_ACCESS, "clients")
+    
     db_customer = models.Customer(
         first_name=customer.first_name,
         last_name=customer.last_name,
@@ -24,19 +32,39 @@ def create_customer(customer: schemas.CustomerCreate, db: Session = Depends(get_
     return db_customer
 
 @router.get("/", response_model=List[schemas.Customer])
-def get_customers(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def get_customers(
+    skip: int = 0, 
+    limit: int = 100, 
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    check_access(current_user, CUSTOMERS_ACCESS, "clients")
+    
     customers = db.query(models.Customer).offset(skip).limit(limit).all()
     return customers
 
 @router.get("/{customer_id}", response_model=schemas.Customer)
-def get_customer(customer_id: int, db: Session = Depends(get_db)):
+def get_customer(
+    customer_id: int, 
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    check_access(current_user, CUSTOMERS_ACCESS, "clients")
+    
     customer = db.query(models.Customer).filter(models.Customer.id == customer_id).first()
     if customer is None:
         raise HTTPException(status_code=404, detail="Customer not found")
     return customer
 
 @router.put("/{customer_id}", response_model=schemas.Customer)
-def update_customer(customer_id: int, customer_update: schemas.CustomerCreate, db: Session = Depends(get_db)):
+def update_customer(
+    customer_id: int, 
+    customer_update: schemas.CustomerCreate, 
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    check_access(current_user, CUSTOMERS_ACCESS, "clients")
+    
     db_customer = db.query(models.Customer).filter(models.Customer.id == customer_id).first()
     if db_customer is None:
         raise HTTPException(status_code=404, detail="Customer not found")
@@ -50,7 +78,13 @@ def update_customer(customer_id: int, customer_update: schemas.CustomerCreate, d
     return db_customer
 
 @router.delete("/{customer_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_customer(customer_id: int, db: Session = Depends(get_db)):
+def delete_customer(
+    customer_id: int, 
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user)
+):
+    check_access(current_user, CUSTOMERS_ACCESS, "clients")
+    
     db_customer = db.query(models.Customer).filter(models.Customer.id == customer_id).first()
     if db_customer is None:
         raise HTTPException(status_code=404, detail="Customer not found")

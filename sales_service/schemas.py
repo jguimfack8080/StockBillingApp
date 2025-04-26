@@ -46,8 +46,13 @@ class SaleItemBase(BaseModel):
     def calculate_total(self) -> float:
         return self.quantity * self.unit_price
 
-class SaleItemCreate(SaleItemBase):
-    pass
+class SaleItemCreate(BaseModel):
+    product_id: int
+    quantity: int
+    unit_price: float
+
+    def calculate_total(self) -> float:
+        return self.quantity * self.unit_price
 
 class SaleItem(SaleItemBase):
     id: int
@@ -71,7 +76,7 @@ class TransactionBase(BaseModel):
         return 0.0
 
 class TransactionCreate(TransactionBase):
-    pass
+    pass  # On retire le sale_id car il sera fourni automatiquement
 
 class Transaction(TransactionBase):
     id: int
@@ -88,8 +93,10 @@ class SaleBase(BaseModel):
     customer_id: Optional[int] = None
     notes: Optional[str] = None
 
-class SaleCreate(SaleBase):
+class SaleCreate(BaseModel):
+    customer_id: int
     items: List[SaleItemCreate]
+    notes: Optional[str] = None
 
     def calculate_total(self) -> float:
         return sum(item.calculate_total() for item in self.items)
@@ -102,8 +109,12 @@ class SalePayment(BaseModel):
         return abs(total_paid - total_amount) < 0.01  # Tolérance pour les arrondis
 
 class SaleUpdate(BaseModel):
-    status: Optional[SaleStatus] = None
-    notes: Optional[str] = None
+    status: Optional[str] = Field(None, description="Nouveau statut de la vente")
+    notes: Optional[str] = Field(None, description="Notes supplémentaires")
+
+    class Config:
+        from_attributes = True
+        extra = "allow"  # Permet des champs supplémentaires
 
 class Sale(SaleBase):
     id: int
@@ -118,13 +129,37 @@ class Sale(SaleBase):
     class Config:
         from_attributes = True
 
+class TransactionResponse(BaseModel):
+    id: int
+    amount: float
+    payment_method: PaymentMethod
+    status: TransactionStatus
+    payment_details: Optional[Dict[str, Any]] = None
+    amount_received: Optional[float] = None
+    change_amount: Optional[float] = None
+    mixed_payments: Optional[List[Dict[str, Any]]] = None  # Détails de tous les moyens de paiement
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
 class SaleResponse(BaseModel):
-    sale: Sale
-    change_amount: float
-    items_count: int
+    id: int
+    sale_number: str
+    customer_id: int
+    cashier_id: int
     total_amount: float
+    status: str
+    notes: Optional[str]
+    created_at: datetime
+    items_count: int
     payment_status: str
     remaining_amount: float
+    change_amount: float
+    transactions: List[TransactionResponse] = []
+
+    class Config:
+        from_attributes = True
 
 class BulkSaleCreate(BaseModel):
     items: List[SaleItemCreate]
