@@ -1,0 +1,4529 @@
+⏳ Création d'une vente (draft)...
+✅ Vente créée avec ID: 45 et Numéro: V20250420-00045
+📤 Paiement CASH uniquement...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Commande test",
+    "id": 45,
+    "sale_number": "V20250420-00045",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 53,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 54,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 51,
+        "sale_id": 45,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 2,
+  "total_amount": 20,
+  "payment_status": "completed",
+  "remaining_amount": 0
+}
+📤 Paiement MIXTE (CASH + TRANSFER)...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 46,
+    "sale_number": "V20250420-00046",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 55,
+        "sale_id": 46,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 52,
+        "sale_id": 46,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 53,
+        "sale_id": 46,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 1,
+  "total_amount": 20,
+  "payment_status": "completed",
+  "remaining_amount": 0
+}
+📤 Paiement MIXTE (CASH + CARD)...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 47,
+    "sale_number": "V20250420-00047",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 56,
+        "sale_id": 47,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 54,
+        "sale_id": 47,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 55,
+        "sale_id": 47,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 1,
+  "total_amount": 25,
+  "payment_status": "completed",
+  "remaining_amount": 0
+}
+📤 Paiement MIXTE (TRANSFER + CARD)...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 48,
+    "sale_number": "V20250420-00048",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 57,
+        "sale_id": 48,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 56,
+        "sale_id": 48,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 57,
+        "sale_id": 48,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 1,
+  "total_amount": 30,
+  "payment_status": "completed",
+  "remaining_amount": 0
+}
+🚫 Annulation d'une vente...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 45,
+    "sale_number": "V20250420-00045",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 53,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 54,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:36.938655",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 51,
+        "sale_id": 45,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 2,
+  "total_amount": 20,
+  "payment_status": "pending",
+  "remaining_amount": 20
+}
+📋 Récupération de toutes les ventes...
+[
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Commande test",
+    "id": 1,
+    "sale_number": "V20250420-00001",
+    "total_amount": 35,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T19:45:23",
+    "updated_at": "2025-04-20T19:53:28",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 5,
+        "unit_price": 5,
+        "id": 1,
+        "sale_id": 1,
+        "total_price": 25,
+        "created_at": "2025-04-20T19:45:23"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 2,
+        "sale_id": 1,
+        "total_price": 10,
+        "created_at": "2025-04-20T19:45:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 1,
+        "sale_id": 1,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T19:53:28",
+        "updated_at": "2025-04-20T19:53:28"
+      },
+      {
+        "amount": 15,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 2,
+        "sale_id": 1,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T19:53:28",
+        "updated_at": "2025-04-20T19:53:28"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 2,
+    "sale_number": "V20250420-00002",
+    "total_amount": 35,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:00:27",
+    "updated_at": "2025-04-20T20:00:27",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 5,
+        "unit_price": 5,
+        "id": 3,
+        "sale_id": 2,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:00:27"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 4,
+        "sale_id": 2,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:00:27"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 35,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:00:27.603563",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 35,
+        "change_amount": 0,
+        "id": 3,
+        "sale_id": 2,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:00:27",
+        "updated_at": "2025-04-20T20:00:27"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente avec paiement mixte",
+    "id": 3,
+    "sale_number": "V20250420-00003",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:00:27",
+    "updated_at": "2025-04-20T20:00:27",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 5,
+        "sale_id": 3,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:00:27"
+      },
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 6,
+        "sale_id": 3,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:00:27"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 4,
+        "sale_id": 3,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:00:27",
+        "updated_at": "2025-04-20T20:00:27"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 5,
+        "sale_id": 3,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:00:27",
+        "updated_at": "2025-04-20T20:00:27"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 4,
+    "sale_number": "V20250420-00004",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 7,
+        "sale_id": 4,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:02:23"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 8,
+        "sale_id": 4,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:02:23.664989",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 6,
+        "sale_id": 4,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 5,
+    "sale_number": "V20250420-00005",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 9,
+        "sale_id": 5,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 7,
+        "sale_id": 5,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 8,
+        "sale_id": 5,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 6,
+    "sale_number": "V20250420-00006",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 10,
+        "sale_id": 6,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 9,
+        "sale_id": 6,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 10,
+        "sale_id": 6,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 7,
+    "sale_number": "V20250420-00007",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 11,
+        "sale_id": 7,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 11,
+        "sale_id": 7,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 12,
+        "sale_id": 7,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 8,
+    "sale_number": "V20250420-00008",
+    "total_amount": 10,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:57",
+    "updated_at": "2025-04-20T20:08:57",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 12,
+        "sale_id": 8,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:08:57"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 13,
+        "sale_id": 8,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:57",
+        "updated_at": "2025-04-20T20:08:57"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 9,
+    "sale_number": "V20250420-00009",
+    "total_amount": 15,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:57",
+    "updated_at": "2025-04-20T20:08:57",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 13,
+        "sale_id": 9,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:08:57"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 15,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 14,
+        "sale_id": 9,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:57",
+        "updated_at": "2025-04-20T20:08:57"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 10,
+    "sale_number": "V20250420-00010",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:57",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 14,
+        "sale_id": 10,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 15,
+        "sale_id": 10,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 11,
+    "sale_number": "V20250420-00011",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 15,
+        "sale_id": 11,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 15,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 15,
+        "change_amount": 0,
+        "id": 16,
+        "sale_id": 11,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      },
+      {
+        "amount": 15,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237699001122"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 17,
+        "sale_id": 11,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 12,
+    "sale_number": "V20250420-00012",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 16,
+        "sale_id": 12,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 18,
+        "sale_id": 12,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 19,
+        "sale_id": 12,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 13,
+    "sale_number": "V20250420-00013",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 17,
+        "sale_id": 13,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Moov",
+          "phone_number": "+237655443322"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 20,
+        "sale_id": 13,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 21,
+        "sale_id": 13,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 14,
+    "sale_number": "V20250420-00014",
+    "total_amount": 9.99,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 18,
+        "sale_id": 14,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 9.99,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 9.99,
+        "change_amount": 0,
+        "id": 22,
+        "sale_id": 14,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 15,
+    "sale_number": "V20250420-00015",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 19,
+        "sale_id": 15,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:10:47"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 20,
+        "sale_id": 15,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:10:47.444669",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 23,
+        "sale_id": 15,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 16,
+    "sale_number": "V20250420-00016",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 21,
+        "sale_id": 16,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 24,
+        "sale_id": 16,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 25,
+        "sale_id": 16,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 17,
+    "sale_number": "V20250420-00017",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 22,
+        "sale_id": 17,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 26,
+        "sale_id": 17,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 27,
+        "sale_id": 17,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 18,
+    "sale_number": "V20250420-00018",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 23,
+        "sale_id": 18,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 28,
+        "sale_id": 18,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 29,
+        "sale_id": 18,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 19,
+    "sale_number": "V20250420-00019",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 24,
+        "sale_id": 19,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:13:19"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 25,
+        "sale_id": 19,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:13:19.702828",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 30,
+        "sale_id": 19,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 20,
+    "sale_number": "V20250420-00020",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 26,
+        "sale_id": 20,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 31,
+        "sale_id": 20,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 32,
+        "sale_id": 20,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 21,
+    "sale_number": "V20250420-00021",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 27,
+        "sale_id": 21,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 33,
+        "sale_id": 21,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 34,
+        "sale_id": 21,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 22,
+    "sale_number": "V20250420-00022",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 28,
+        "sale_id": 22,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 35,
+        "sale_id": 22,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 36,
+        "sale_id": 22,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 23,
+    "sale_number": "V20250420-00023",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 29,
+        "sale_id": 23,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:15:55"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 30,
+        "sale_id": 23,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:15:55.346064",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 37,
+        "sale_id": 23,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 24,
+    "sale_number": "V20250420-00024",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 31,
+        "sale_id": 24,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 38,
+        "sale_id": 24,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 39,
+        "sale_id": 24,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 25,
+    "sale_number": "V20250420-00025",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 32,
+        "sale_id": 25,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 40,
+        "sale_id": 25,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 41,
+        "sale_id": 25,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 26,
+    "sale_number": "V20250420-00026",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 33,
+        "sale_id": 26,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 42,
+        "sale_id": 26,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 43,
+        "sale_id": 26,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 27,
+    "sale_number": "V20250420-00027",
+    "total_amount": 10,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 34,
+        "sale_id": 27,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 28,
+    "sale_number": "V20250420-00028",
+    "total_amount": 15,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 35,
+        "sale_id": 28,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 29,
+    "sale_number": "V20250420-00029",
+    "total_amount": 20,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 36,
+        "sale_id": 29,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 30,
+    "sale_number": "V20250420-00030",
+    "total_amount": 30,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 37,
+        "sale_id": 30,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 31,
+    "sale_number": "V20250420-00031",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 38,
+        "sale_id": 31,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 32,
+    "sale_number": "V20250420-00032",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 39,
+        "sale_id": 32,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 33,
+    "sale_number": "V20250420-00033",
+    "total_amount": 9.99,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 40,
+        "sale_id": 33,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 34,
+    "sale_number": "V20250420-00034",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 41,
+        "sale_id": 34,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:06"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 42,
+        "sale_id": 34,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:06.581996",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 44,
+        "sale_id": 34,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 35,
+    "sale_number": "V20250420-00035",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 43,
+        "sale_id": 35,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 45,
+        "sale_id": 35,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 46,
+        "sale_id": 35,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 36,
+    "sale_number": "V20250420-00036",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 44,
+        "sale_id": 36,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 47,
+        "sale_id": 36,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 48,
+        "sale_id": 36,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 37,
+    "sale_number": "V20250420-00037",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 45,
+        "sale_id": 37,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 49,
+        "sale_id": 37,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 50,
+        "sale_id": 37,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 38,
+    "sale_number": "V20250420-00038",
+    "total_amount": 10,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 46,
+        "sale_id": 38,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 39,
+    "sale_number": "V20250420-00039",
+    "total_amount": 15,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 47,
+        "sale_id": 39,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 40,
+    "sale_number": "V20250420-00040",
+    "total_amount": 20,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 48,
+        "sale_id": 40,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 41,
+    "sale_number": "V20250420-00041",
+    "total_amount": 30,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 49,
+        "sale_id": 41,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 42,
+    "sale_number": "V20250420-00042",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 50,
+        "sale_id": 42,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 43,
+    "sale_number": "V20250420-00043",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 51,
+        "sale_id": 43,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 44,
+    "sale_number": "V20250420-00044",
+    "total_amount": 9.99,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 52,
+        "sale_id": 44,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 45,
+    "sale_number": "V20250420-00045",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 53,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 54,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:36.938655",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 51,
+        "sale_id": 45,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 46,
+    "sale_number": "V20250420-00046",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 55,
+        "sale_id": 46,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 52,
+        "sale_id": 46,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 53,
+        "sale_id": 46,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 47,
+    "sale_number": "V20250420-00047",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 56,
+        "sale_id": 47,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 54,
+        "sale_id": 47,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 55,
+        "sale_id": 47,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 48,
+    "sale_number": "V20250420-00048",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 57,
+        "sale_id": 48,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 56,
+        "sale_id": 48,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 57,
+        "sale_id": 48,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  }
+]
+🔍 Récupération de la vente par ID (45)...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 45,
+    "sale_number": "V20250420-00045",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 53,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 54,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:36.938655",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 51,
+        "sale_id": 45,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 2,
+  "total_amount": 20,
+  "payment_status": "pending",
+  "remaining_amount": 20
+}
+🔍 Récupération de la vente par numéro (V20250420-00045)...
+{
+  "sale": {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 45,
+    "sale_number": "V20250420-00045",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 53,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 54,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:36.938655",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 51,
+        "sale_id": 45,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  "change_amount": 0,
+  "items_count": 2,
+  "total_amount": 20,
+  "payment_status": "pending",
+  "remaining_amount": 20
+}
+----------------------------------------
+🛒 Vente avec paiement 100% CASH
+----------------------------------------
+🛒 Vente avec paiement 100% TRANSFER
+----------------------------------------
+🛒 Vente avec paiement 100% CARD
+----------------------------------------
+🛒 Vente avec paiement MIXTE CASH + TRANSFER
+----------------------------------------
+🛒 Vente avec paiement MIXTE CASH + CARD
+----------------------------------------
+🛒 Vente avec paiement MIXTE TRANSFER + CARD
+----------------------------------------
+🛒 Vente avec UN SEUL PRODUIT
+----------------------------------------
+📋 Affichage de toutes les ventes...
+[
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Commande test",
+    "id": 1,
+    "sale_number": "V20250420-00001",
+    "total_amount": 35,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T19:45:23",
+    "updated_at": "2025-04-20T19:53:28",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 5,
+        "unit_price": 5,
+        "id": 1,
+        "sale_id": 1,
+        "total_price": 25,
+        "created_at": "2025-04-20T19:45:23"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 2,
+        "sale_id": 1,
+        "total_price": 10,
+        "created_at": "2025-04-20T19:45:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 1,
+        "sale_id": 1,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T19:53:28",
+        "updated_at": "2025-04-20T19:53:28"
+      },
+      {
+        "amount": 15,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 2,
+        "sale_id": 1,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T19:53:28",
+        "updated_at": "2025-04-20T19:53:28"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 2,
+    "sale_number": "V20250420-00002",
+    "total_amount": 35,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:00:27",
+    "updated_at": "2025-04-20T20:00:27",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 5,
+        "unit_price": 5,
+        "id": 3,
+        "sale_id": 2,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:00:27"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 4,
+        "sale_id": 2,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:00:27"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 35,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:00:27.603563",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 35,
+        "change_amount": 0,
+        "id": 3,
+        "sale_id": 2,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:00:27",
+        "updated_at": "2025-04-20T20:00:27"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente avec paiement mixte",
+    "id": 3,
+    "sale_number": "V20250420-00003",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:00:27",
+    "updated_at": "2025-04-20T20:00:27",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 5,
+        "sale_id": 3,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:00:27"
+      },
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 6,
+        "sale_id": 3,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:00:27"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 4,
+        "sale_id": 3,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:00:27",
+        "updated_at": "2025-04-20T20:00:27"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 5,
+        "sale_id": 3,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:00:27",
+        "updated_at": "2025-04-20T20:00:27"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 4,
+    "sale_number": "V20250420-00004",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 7,
+        "sale_id": 4,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:02:23"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 8,
+        "sale_id": 4,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:02:23.664989",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 6,
+        "sale_id": 4,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 5,
+    "sale_number": "V20250420-00005",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 9,
+        "sale_id": 5,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 7,
+        "sale_id": 5,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 8,
+        "sale_id": 5,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 6,
+    "sale_number": "V20250420-00006",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 10,
+        "sale_id": 6,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 9,
+        "sale_id": 6,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 10,
+        "sale_id": 6,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 7,
+    "sale_number": "V20250420-00007",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:02:23",
+    "updated_at": "2025-04-20T20:02:23",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 11,
+        "sale_id": 7,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:02:23"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 11,
+        "sale_id": 7,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 12,
+        "sale_id": 7,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:02:23",
+        "updated_at": "2025-04-20T20:02:23"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 8,
+    "sale_number": "V20250420-00008",
+    "total_amount": 10,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:57",
+    "updated_at": "2025-04-20T20:08:57",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 12,
+        "sale_id": 8,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:08:57"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 13,
+        "sale_id": 8,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:57",
+        "updated_at": "2025-04-20T20:08:57"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 9,
+    "sale_number": "V20250420-00009",
+    "total_amount": 15,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:57",
+    "updated_at": "2025-04-20T20:08:57",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 13,
+        "sale_id": 9,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:08:57"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 15,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 14,
+        "sale_id": 9,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:57",
+        "updated_at": "2025-04-20T20:08:57"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 10,
+    "sale_number": "V20250420-00010",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:57",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 14,
+        "sale_id": 10,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 15,
+        "sale_id": 10,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 11,
+    "sale_number": "V20250420-00011",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 15,
+        "sale_id": 11,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 15,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 15,
+        "change_amount": 0,
+        "id": 16,
+        "sale_id": 11,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      },
+      {
+        "amount": 15,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237699001122"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 17,
+        "sale_id": 11,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 12,
+    "sale_number": "V20250420-00012",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 16,
+        "sale_id": 12,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 18,
+        "sale_id": 12,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 19,
+        "sale_id": 12,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 13,
+    "sale_number": "V20250420-00013",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 17,
+        "sale_id": 13,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Moov",
+          "phone_number": "+237655443322"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 20,
+        "sale_id": 13,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 21,
+        "sale_id": 13,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 14,
+    "sale_number": "V20250420-00014",
+    "total_amount": 9.99,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:08:58",
+    "updated_at": "2025-04-20T20:08:58",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 18,
+        "sale_id": 14,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:08:58"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 9.99,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 9.99,
+        "change_amount": 0,
+        "id": 22,
+        "sale_id": 14,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:08:58",
+        "updated_at": "2025-04-20T20:08:58"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 15,
+    "sale_number": "V20250420-00015",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 19,
+        "sale_id": 15,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:10:47"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 20,
+        "sale_id": 15,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:10:47.444669",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 23,
+        "sale_id": 15,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 16,
+    "sale_number": "V20250420-00016",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 21,
+        "sale_id": 16,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 24,
+        "sale_id": 16,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 25,
+        "sale_id": 16,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 17,
+    "sale_number": "V20250420-00017",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 22,
+        "sale_id": 17,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 26,
+        "sale_id": 17,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 27,
+        "sale_id": 17,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 18,
+    "sale_number": "V20250420-00018",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:10:47",
+    "updated_at": "2025-04-20T20:10:47",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 23,
+        "sale_id": 18,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:10:47"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 28,
+        "sale_id": 18,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 29,
+        "sale_id": 18,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:10:47",
+        "updated_at": "2025-04-20T20:10:47"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 19,
+    "sale_number": "V20250420-00019",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 24,
+        "sale_id": 19,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:13:19"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 25,
+        "sale_id": 19,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:13:19.702828",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 30,
+        "sale_id": 19,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 20,
+    "sale_number": "V20250420-00020",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 26,
+        "sale_id": 20,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 31,
+        "sale_id": 20,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 32,
+        "sale_id": 20,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 21,
+    "sale_number": "V20250420-00021",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 27,
+        "sale_id": 21,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 33,
+        "sale_id": 21,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 34,
+        "sale_id": 21,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 22,
+    "sale_number": "V20250420-00022",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:13:19",
+    "updated_at": "2025-04-20T20:13:19",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 28,
+        "sale_id": 22,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:13:19"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 35,
+        "sale_id": 22,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 36,
+        "sale_id": 22,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:13:19",
+        "updated_at": "2025-04-20T20:13:19"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 23,
+    "sale_number": "V20250420-00023",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 29,
+        "sale_id": 23,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:15:55"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 30,
+        "sale_id": 23,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:15:55.346064",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 37,
+        "sale_id": 23,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 24,
+    "sale_number": "V20250420-00024",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 31,
+        "sale_id": 24,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 38,
+        "sale_id": 24,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 39,
+        "sale_id": 24,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 25,
+    "sale_number": "V20250420-00025",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 32,
+        "sale_id": 25,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 40,
+        "sale_id": 25,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 41,
+        "sale_id": 25,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 26,
+    "sale_number": "V20250420-00026",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 33,
+        "sale_id": 26,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 42,
+        "sale_id": 26,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 43,
+        "sale_id": 26,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:15:55",
+        "updated_at": "2025-04-20T20:15:55"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 27,
+    "sale_number": "V20250420-00027",
+    "total_amount": 10,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 34,
+        "sale_id": 27,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 28,
+    "sale_number": "V20250420-00028",
+    "total_amount": 15,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 35,
+        "sale_id": 28,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 29,
+    "sale_number": "V20250420-00029",
+    "total_amount": 20,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 36,
+        "sale_id": 29,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 30,
+    "sale_number": "V20250420-00030",
+    "total_amount": 30,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 37,
+        "sale_id": 30,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 31,
+    "sale_number": "V20250420-00031",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 38,
+        "sale_id": 31,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 32,
+    "sale_number": "V20250420-00032",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 39,
+        "sale_id": 32,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 33,
+    "sale_number": "V20250420-00033",
+    "total_amount": 9.99,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:15:55",
+    "updated_at": "2025-04-20T20:15:55",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 40,
+        "sale_id": 33,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:15:55"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 34,
+    "sale_number": "V20250420-00034",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 41,
+        "sale_id": 34,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:06"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 42,
+        "sale_id": 34,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:06.581996",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 44,
+        "sale_id": 34,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 35,
+    "sale_number": "V20250420-00035",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 43,
+        "sale_id": 35,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 45,
+        "sale_id": 35,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 46,
+        "sale_id": 35,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 36,
+    "sale_number": "V20250420-00036",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 44,
+        "sale_id": 36,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 47,
+        "sale_id": 36,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 48,
+        "sale_id": 36,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 37,
+    "sale_number": "V20250420-00037",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 45,
+        "sale_id": 37,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 49,
+        "sale_id": 37,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 50,
+        "sale_id": 37,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:06",
+        "updated_at": "2025-04-20T20:19:06"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 38,
+    "sale_number": "V20250420-00038",
+    "total_amount": 10,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 46,
+        "sale_id": 38,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 39,
+    "sale_number": "V20250420-00039",
+    "total_amount": 15,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 47,
+        "sale_id": 39,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 40,
+    "sale_number": "V20250420-00040",
+    "total_amount": 20,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:06",
+    "updated_at": "2025-04-20T20:19:06",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 48,
+        "sale_id": 40,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:06"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 41,
+    "sale_number": "V20250420-00041",
+    "total_amount": 30,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 49,
+        "sale_id": 41,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 42,
+    "sale_number": "V20250420-00042",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 50,
+        "sale_id": 42,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 43,
+    "sale_number": "V20250420-00043",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 51,
+        "sale_id": 43,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 44,
+    "sale_number": "V20250420-00044",
+    "total_amount": 9.99,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:07",
+    "updated_at": "2025-04-20T20:19:07",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 52,
+        "sale_id": 44,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:19:07"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Client a annulé la commande",
+    "id": 45,
+    "sale_number": "V20250420-00045",
+    "total_amount": 20,
+    "status": "CANCELLED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 53,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      },
+      {
+        "product_id": 102,
+        "quantity": 1,
+        "unit_price": 10,
+        "id": 54,
+        "sale_id": 45,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 20,
+        "payment_method": "CASH",
+        "payment_details": {
+          "refund_date": "2025-04-20T20:19:36.938655",
+          "refund_reason": "Sale cancelled"
+        },
+        "amount_received": 20,
+        "change_amount": 0,
+        "id": 51,
+        "sale_id": 45,
+        "status": "REFUNDED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+TRANSFER",
+    "id": 46,
+    "sale_number": "V20250420-00046",
+    "total_amount": 20,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 2,
+        "unit_price": 10,
+        "id": 55,
+        "sale_id": 46,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 52,
+        "sale_id": 46,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "Orange",
+          "phone_number": "+237612345678"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 53,
+        "sale_id": 46,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte CASH+CARD",
+    "id": 47,
+    "sale_number": "V20250420-00047",
+    "total_amount": 25,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 104,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 56,
+        "sale_id": 47,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "CASH",
+        "payment_details": null,
+        "amount_received": 10,
+        "change_amount": 0,
+        "id": 54,
+        "sale_id": 47,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 15,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 55,
+        "sale_id": 47,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente mixte TRANSFER+CARD",
+    "id": 48,
+    "sale_number": "V20250420-00048",
+    "total_amount": 30,
+    "status": "COMPLETED",
+    "created_at": "2025-04-20T20:19:36",
+    "updated_at": "2025-04-20T20:19:36",
+    "items": [
+      {
+        "product_id": 105,
+        "quantity": 2,
+        "unit_price": 15,
+        "id": 57,
+        "sale_id": 48,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:36"
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 10,
+        "payment_method": "TRANSFER",
+        "payment_details": {
+          "operator": "MTN",
+          "phone_number": "+237699998888"
+        },
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 56,
+        "sale_id": 48,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      },
+      {
+        "amount": 20,
+        "payment_method": "CARD",
+        "payment_details": null,
+        "amount_received": null,
+        "change_amount": 0,
+        "id": 57,
+        "sale_id": 48,
+        "status": "COMPLETED",
+        "created_at": "2025-04-20T20:19:36",
+        "updated_at": "2025-04-20T20:19:36"
+      }
+    ]
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH",
+    "id": 49,
+    "sale_number": "V20250420-00049",
+    "total_amount": 10,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 201,
+        "quantity": 2,
+        "unit_price": 5,
+        "id": 58,
+        "sale_id": 49,
+        "total_price": 10,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER",
+    "id": 50,
+    "sale_number": "V20250420-00050",
+    "total_amount": 15,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 202,
+        "quantity": 1,
+        "unit_price": 15,
+        "id": 59,
+        "sale_id": 50,
+        "total_price": 15,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CARD",
+    "id": 51,
+    "sale_number": "V20250420-00051",
+    "total_amount": 20,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 203,
+        "quantity": 1,
+        "unit_price": 20,
+        "id": 60,
+        "sale_id": 51,
+        "total_price": 20,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+TRANSFER",
+    "id": 52,
+    "sale_number": "V20250420-00052",
+    "total_amount": 30,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 204,
+        "quantity": 3,
+        "unit_price": 10,
+        "id": 61,
+        "sale_id": 52,
+        "total_price": 30,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente CASH+CARD",
+    "id": 53,
+    "sale_number": "V20250420-00053",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 205,
+        "quantity": 1,
+        "unit_price": 25,
+        "id": 62,
+        "sale_id": 53,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente TRANSFER+CARD",
+    "id": 54,
+    "sale_number": "V20250420-00054",
+    "total_amount": 25,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 206,
+        "quantity": 2,
+        "unit_price": 12.5,
+        "id": 63,
+        "sale_id": 54,
+        "total_price": 25,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  },
+  {
+    "cashier_id": 1,
+    "customer_id": null,
+    "notes": "Vente 1 seul produit",
+    "id": 55,
+    "sale_number": "V20250420-00055",
+    "total_amount": 9.99,
+    "status": "DRAFT",
+    "created_at": "2025-04-20T20:19:37",
+    "updated_at": "2025-04-20T20:19:37",
+    "items": [
+      {
+        "product_id": 207,
+        "quantity": 1,
+        "unit_price": 9.99,
+        "id": 64,
+        "sale_id": 55,
+        "total_price": 9.99,
+        "created_at": "2025-04-20T20:19:37"
+      }
+    ],
+    "transactions": []
+  }
+]

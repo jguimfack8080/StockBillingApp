@@ -1,0 +1,163 @@
+# Obtenir le token d'authentification
+curl -X POST "http://localhost:8001/auth/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "username=admin@test.com&password=adminpassword"
+
+# ===== ENDPOINTS CUSTOMERS =====
+
+# 1. Créer un client
+curl -X POST "http://localhost:8002/customers/" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0NTE2OTM2NX0.6v5Leefqepx_UtD8uaLvDO1KMr8a6uPoTMStG9UxlD4" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "first_name": "Test",
+    "last_name": "Customer",
+    "email": "test.customer@example.com",
+    "phone": "1234567890",
+    "address": "123 Test Street"
+  }'
+
+# 2. Récupérer tous les clients
+curl -X GET "http://localhost:8002/customers/" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 3. Récupérer un client spécifique
+curl -X GET "http://localhost:8002/customers/1" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 4. Mettre à jour un client
+curl -X PUT "http://localhost:8002/customers/1" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "first_name": "Updated",
+    "last_name": "Customer",
+    "email": "updated.customer@example.com",
+    "phone": "0987654321",
+    "address": "456 Updated Street"
+  }'
+
+# 5. Supprimer un client
+curl -X DELETE "http://localhost:8002/customers/1" \
+  -H "Authorization: Bearer $TOKEN"
+
+# ===== ENDPOINTS SALES =====
+
+# 1. Créer une vente
+curl -X POST "http://localhost:8002/sales/" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "cashier_id": 1,
+    "customer_id": 1,
+    "payment_method": "CASH",
+    "notes": "Test sale",
+    "items": [
+      {
+        "product_id": 1,
+        "quantity": 2,
+        "unit_price": 10.99
+      }
+    ],
+    "transactions": [
+      {
+        "amount": 21.98,
+        "payment_method": "CASH",
+        "amount_received": 25.00
+      }
+    ]
+  }'
+
+# 2. Créer des ventes en masse
+curl -X POST "http://localhost:8002/sales/bulk" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "cashier_id": 1,
+    "customer_id": 1,
+    "sales": [
+      {
+        "payment_method": "CASH",
+        "items": [
+          {
+            "product_id": 1,
+            "quantity": 2,
+            "unit_price": 10.99
+          }
+        ],
+        "transactions": [
+          {
+            "amount": 21.98,
+            "payment_method": "CASH",
+            "amount_received": 25.00
+          }
+        ]
+      }
+    ]
+  }'
+
+# 3. Récupérer toutes les ventes
+curl -X GET "http://localhost:8002/sales/" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 4. Récupérer une vente par ID
+curl -X GET "http://localhost:8002/sales/1" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 5. Récupérer une vente par numéro
+curl -X GET "http://localhost:8002/sales/number/V20240420-00001" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 6. Mettre à jour une vente
+curl -X PUT "http://localhost:8002/sales/1" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "COMPLETED",
+    "notes": "Updated test sale"
+  }'
+
+# ===== ENDPOINTS TRANSACTIONS =====
+
+# 1. Créer une transaction
+curl -X POST "http://localhost:8002/transactions/" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sale_id": 1,
+    "amount": 10.99,
+    "payment_method": "CARD",
+    "payment_details": {
+      "card_number": "****1234",
+      "card_type": "VISA"
+    }
+  }'
+
+# 2. Récupérer toutes les transactions
+curl -X GET "http://localhost:8002/transactions/" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 3. Récupérer une transaction spécifique
+curl -X GET "http://localhost:8002/transactions/1" \
+  -H "Authorization: Bearer $TOKEN"
+
+# 4. Mettre à jour le statut d'une transaction
+curl -X PUT "http://localhost:8002/transactions/1/status" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"status": "COMPLETED"}'
+
+# ===== NOTES IMPORTANTES =====
+
+# 1. Tous les endpoints nécessitent un token d'authentification
+# 2. Les données doivent être envoyées au format JSON
+# 3. Les IDs (customer_id, sale_id, etc.) doivent être remplacés par des valeurs valides
+# 4. Les méthodes de paiement valides sont :
+#    - "CASH"
+#    - "CARD"
+#    - "TRANSFER"
+# 5. Les statuts de transaction valides sont :
+#    - "PENDING"
+#    - "COMPLETED"
+#    - "FAILED"
+#    - "REFUNDED" 

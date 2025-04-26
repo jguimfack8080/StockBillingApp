@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Attendre que MySQL soit prêt
-until nc -z -v -w30 mysql 3306
+until nc -z -v -w30 mysql_auth 3306
 do
   echo "En attente de MySQL..."
   sleep 1
